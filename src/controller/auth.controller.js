@@ -3,7 +3,7 @@ import { ApiError } from "../utils/apiError.js";
 import { asyncWrapper } from "../utils/asyncWrapper.js";
 import { generateToken, hashedPassword } from "../utils/utilities.js";
 
-export const registerUser = asyncWrapper(async (req, res) => {
+export const signUpUser = asyncWrapper(async (req, res) => {
     const { first_name, last_name, email, password } = req.body
 
     //check if the user is already registered
@@ -25,7 +25,7 @@ export const registerUser = asyncWrapper(async (req, res) => {
 })
 
 
-export const loginUser = asyncWrapper(async (req, res) => {
+export const signInUser = asyncWrapper(async (req, res) => {
     const { email, password } = req.body
 
     //check if the user is already registered

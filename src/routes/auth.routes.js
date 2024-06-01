@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { loginUser, registerUser } from "../controller/auth.controller.js";
+import { signInUser, signUpUser } from "../controller/auth.controller.js";
 import { validateReqBody } from "../middleware/validation.middleware.js";
 import { userLoginSchema, userRegisterSchema } from "../utils/validations.js";
 
 const authRouter = Router()
 
-authRouter.route('/register').post(validateReqBody(userRegisterSchema), registerUser)
-authRouter.route('/login').post(validateReqBody(userLoginSchema), loginUser)
+authRouter.route('/sign-up').post(validateReqBody(userRegisterSchema), signUpUser)
+authRouter.route('/sign-in').post(validateReqBody(userLoginSchema), signInUser)
 
 export default authRouter;
